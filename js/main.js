@@ -52,6 +52,39 @@ function scrollToTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+/* ---- Carousel museo ---- */
+let carouselIndex = 0;
+const CAROUSEL_TOTAL = 12;
+
+function carouselMove(dir) {
+  carouselIndex = (carouselIndex + dir + CAROUSEL_TOTAL) % CAROUSEL_TOTAL;
+  carouselUpdate();
+}
+
+function carouselUpdate() {
+  const track = document.getElementById('carouselTrack');
+  if (!track) return;
+  track.style.transform = `translateX(-${carouselIndex * 100}%)`;
+  document.getElementById('carouselCurrent').textContent = carouselIndex + 1;
+  document.querySelectorAll('.carousel__dot').forEach((d, i) =>
+    d.classList.toggle('active', i === carouselIndex)
+  );
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const dotsEl = document.getElementById('carouselDots');
+  if (dotsEl) {
+    for (let i = 0; i < CAROUSEL_TOTAL; i++) {
+      const btn = document.createElement('button');
+      btn.className = 'carousel__dot' + (i === 0 ? ' active' : '');
+      btn.setAttribute('aria-label', `Foto ${i + 1}`);
+      btn.onclick = () => { carouselIndex = i; carouselUpdate(); };
+      dotsEl.appendChild(btn);
+    }
+    setInterval(() => carouselMove(1), 4000);
+  }
+});
+
 /* ---- Formulario de contacto (mailto fallback) ---- */
 function handleForm(e) {
   e.preventDefault();

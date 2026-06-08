@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,11 +12,11 @@
 <body>
 <nav class="nav" id="nav"><div class="container"><div class="nav__inner">
   <a href="index.html" class="nav__logo"><img src="resources/icons/logo_svg.svg" alt="Fundación Fayón Cultural y Patrimonial" class="nav__logo-img" /></a>
-  <ul class="nav__links"><li><a href="quienes-somos.html">Quiénes somos</a></li><li><a href="museos.html">Museos</a></li><li><a href="recreacion.html">Recreación</a></li><li><a href="visitas.html">Visitas</a></li><li><a href="concurso.html">Concurso</a></li><li><a href="patrimonio.html">Patrimonio</a></li><li><a href="agenda.html">Agenda</a></li></ul>
+  <ul class="nav__links"><li><a href="quienes-somos.html">Quiénes somos</a></li><li><a href="museos.html">Museos</a></li><li><a href="recreacion.html">Recreación</a></li><li><a href="visitas.html">Visitas</a></li><li><a href="concurso.html">Concurso</a></li><li><a href="patrimonio.html">Patrimonio</a></li><li><a href="agenda.html">Agenda</a></li><li><a href="memoria.html">Memoria</a></li></ul>
   <a href="contacto.html" class="btn btn-primary btn-sm nav__cta">Contacto</a>
   <button class="nav__burger" id="burger" aria-label="Menú"><span></span><span></span><span></span></button>
 </div></div>
-<div class="nav__mobile" id="mobileMenu"><a href="quienes-somos.html">Quiénes somos</a><a href="museos.html">Museos</a><a href="recreacion.html">Recreación Histórica</a><a href="visitas.html">Visitas Guiadas</a><a href="concurso.html">Concurso de Pintura</a><a href="patrimonio.html">Patrimonio</a><a href="agenda.html">Agenda</a><a href="contacto.html">Contacto</a></div>
+<div class="nav__mobile" id="mobileMenu"><a href="quienes-somos.html">Quiénes somos</a><a href="museos.html">Museos</a><a href="recreacion.html">Recreación Histórica</a><a href="visitas.html">Visitas Guiadas</a><a href="concurso.html">Concurso de Pintura</a><a href="patrimonio.html">Patrimonio</a><a href="agenda.html">Agenda</a><a href="memoria.html">Memoria Democrática</a><a href="contacto.html">Contacto</a></div>
 </nav>
 
 <div class="page-hero"><div class="container">
@@ -30,10 +30,27 @@
 
     <!-- Museo Batalla del Ebro -->
     <div class="museo-card fade-in">
-      <div class="museo-card__img placeholder placeholder-museo">
-        <!-- <img src="fotos/museo-ebro.jpg" alt="Museo de la Batalla del Ebro" /> -->
-        <span style="font-size:3rem;">🏛️</span>
-        <p>📷 Foto del Museo<br/><small>Añadir desde Google Photos</small></p>
+      <div class="museo-card__img" style="padding:0; overflow:hidden;">
+        <div class="carousel" id="carouselMuseo">
+          <div class="carousel__track" id="carouselTrack">
+            <div class="carousel__slide"><img src="fotos/museo/Museo/_MG_9642.jpg" alt="Museo Batalla del Ebro" loading="lazy" /></div>
+            <div class="carousel__slide"><img src="fotos/museo/Museo/_MG_9646.jpg" alt="Museo Batalla del Ebro" loading="lazy" /></div>
+            <div class="carousel__slide"><img src="fotos/museo/Museo/_MG_9649.jpg" alt="Museo Batalla del Ebro" loading="lazy" /></div>
+            <div class="carousel__slide"><img src="fotos/museo/Museo/_MG_9652.jpg" alt="Museo Batalla del Ebro" loading="lazy" /></div>
+            <div class="carousel__slide"><img src="fotos/museo/Museo/_MG_9653.jpg" alt="Museo Batalla del Ebro" loading="lazy" /></div>
+            <div class="carousel__slide"><img src="fotos/museo/Museo/_MG_9659.jpg" alt="Museo Batalla del Ebro" loading="lazy" /></div>
+            <div class="carousel__slide"><img src="fotos/museo/Museo/_MG_9662.jpg" alt="Museo Batalla del Ebro" loading="lazy" /></div>
+            <div class="carousel__slide"><img src="fotos/museo/Museo/_MG_9666.jpg" alt="Museo Batalla del Ebro" loading="lazy" /></div>
+            <div class="carousel__slide"><img src="fotos/museo/Museo/_MG_9673.jpg" alt="Museo Batalla del Ebro" loading="lazy" /></div>
+            <div class="carousel__slide"><img src="fotos/museo/Museo/_MG_9678.jpg" alt="Museo Batalla del Ebro" loading="lazy" /></div>
+            <div class="carousel__slide"><img src="fotos/museo/Museo/_MG_9964.jpg" alt="Museo Batalla del Ebro" loading="lazy" /></div>
+            <div class="carousel__slide"><img src="fotos/museo/Museo/MG_9977.jpg" alt="Museo Batalla del Ebro" loading="lazy" /></div>
+          </div>
+          <button class="carousel__btn carousel__btn--prev" onclick="carouselMove(-1)" aria-label="Anterior">&#8592;</button>
+          <button class="carousel__btn carousel__btn--next" onclick="carouselMove(1)" aria-label="Siguiente">&#8594;</button>
+          <div class="carousel__count"><span id="carouselCurrent">1</span> / 12</div>
+          <div class="carousel__dots" id="carouselDots"></div>
+        </div>
       </div>
       <div class="museo-card__body">
         <span class="badge">Museo</span>
@@ -88,10 +105,11 @@
           <a href="concurso.html" class="btn btn-dark btn-sm">Concurso Burges 2026</a>
         </div>
       </div>
-      <div class="museo-card__img placeholder placeholder-burges" style="order:2;">
-        <!-- <img src="fotos/burges.jpg" alt="Espacio María Pilar Burges" /> -->
-        <span style="font-size:3rem;">🎨</span>
-        <p>📷 Foto del Espacio Burges<br/><small>Añadir desde Google Photos</small></p>
+      <div class="museo-card__img" style="order:2; padding:1.5rem; background:var(--base-mid);">
+        <div class="burges-fotos">
+          <img src="fotos/burges/Triptico Burges/1.png" alt="Obras Espacio María Pilar Burges" loading="lazy" />
+          <img src="fotos/burges/Triptico Burges/2.png" alt="Obras Espacio María Pilar Burges" loading="lazy" />
+        </div>
       </div>
     </div>
 
@@ -102,8 +120,9 @@
   <div class="footer-brand"><div class="footer-logo"><img src="resources/icons/logo_svg.svg" alt="Fundación Fayón Cultural y Patrimonial" class="footer-logo-img" /></div><p>Fayón · Bajo Aragón-Caspe · Aragón</p></div>
   <div class="footer-col"><h4>Museos</h4><ul><li><a href="museos.html">Museo Batalla del Ebro</a></li><li><a href="museos.html#burges">Espacio Burges</a></li><li><a href="https://entradas.turismofayon.es" target="_blank">Comprar entradas</a></li></ul></div>
   <div class="footer-col"><h4>Actividades</h4><ul><li><a href="recreacion.html">Recreación Histórica</a></li><li><a href="visitas.html">Visitas Patrimonio</a></li><li><a href="concurso.html">Concurso de Pintura</a></li><li><a href="agenda.html">Agenda 2026</a></li></ul></div>
-  <div class="footer-col"><h4>Fundación</h4><ul><li><a href="quienes-somos.html">Quiénes somos</a></li><li><a href="patrimonio.html">Patrimonio</a></li><li><a href="contacto.html">Contacto</a></li></ul></div>
+  <div class="footer-col"><h4>Fundación</h4><ul><li><a href="quienes-somos.html">Quiénes somos</a></li><li><a href="patrimonio.html">Patrimonio</a></li><li><a href="memoria.html">Memoria Democrática</a></li><li><a href="contacto.html">Contacto</a></li></ul></div>
 </div><div class="footer-bottom"><span>© 2026 Fundación Fayón Cultural y Patrimonial</span><span style="display:flex;gap:1.5rem;"><a href="#">Aviso legal</a><a href="#">Privacidad</a></span></div></div></footer>
 <button class="scroll-top" id="scrollTop" onclick="scrollToTop()" aria-label="Volver arriba">↑</button>
 <script src="js/main.js"></script>
 </body></html>
+

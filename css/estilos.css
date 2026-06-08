@@ -532,3 +532,120 @@ footer { background: #111; color: rgba(255,255,255,.75); padding: 4rem 0 2rem; }
 .scroll-top:hover   { background: var(--acento); color: var(--estructura); }
 .fade-in { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
 .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+/* ============================================================
+   CAROUSEL MUSEO
+============================================================ */
+.carousel {
+  position: relative; overflow: hidden; border-radius: 12px;
+  aspect-ratio: 16/9; background: var(--estructura);
+}
+.carousel__track {
+  display: flex; height: 100%;
+  transition: transform .5s cubic-bezier(.4,0,.2,1);
+}
+.carousel__slide { min-width: 100%; height: 100%; }
+.carousel__slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.carousel__btn {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 44px; height: 44px; background: rgba(26,26,26,.65);
+  border: 2px solid rgba(200,169,110,.6); border-radius: 50%;
+  color: var(--acento); font-size: 1.1rem; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: .2s; z-index: 2; backdrop-filter: blur(4px);
+}
+.carousel__btn:hover { background: var(--acento); color: var(--estructura); }
+.carousel__btn--prev { left: .75rem; }
+.carousel__btn--next { right: .75rem; }
+.carousel__dots {
+  position: absolute; bottom: .75rem; left: 50%; transform: translateX(-50%);
+  display: flex; gap: .4rem; z-index: 2;
+}
+.carousel__dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: rgba(255,255,255,.45); cursor: pointer; transition: .2s; border: none;
+}
+.carousel__dot.active { background: var(--acento); transform: scale(1.3); }
+.carousel__count {
+  position: absolute; top: .75rem; right: .75rem;
+  background: rgba(26,26,26,.7); color: var(--acento);
+  font-size: .75rem; padding: .3rem .7rem; border-radius: 20px;
+  font-weight: 700; z-index: 2;
+}
+
+/* ============================================================
+   FOTOS RECREACIÓN
+============================================================ */
+.foto-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem; margin-top: 2rem;
+}
+.foto-item { position: relative; overflow: hidden; border-radius: 10px; aspect-ratio: 4/3; }
+.foto-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .35s; }
+.foto-item:hover img { transform: scale(1.06); }
+.foto-item__caption {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: linear-gradient(transparent, rgba(26,26,26,.85));
+  color: #fff; font-size: .75rem; padding: 2rem .75rem .75rem;
+  transform: translateY(100%); transition: .3s;
+}
+.foto-item:hover .foto-item__caption { transform: translateY(0); }
+
+/* ============================================================
+   FOTOS BURGES
+============================================================ */
+.burges-fotos { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; margin-top: 1.25rem; }
+.burges-fotos img { width: 100%; border-radius: 8px; aspect-ratio: 4/3; object-fit: cover; }
+@media (max-width: 500px) { .burges-fotos { grid-template-columns: 1fr; } }
+
+/* ============================================================
+   MEMORIA DEMOCRÁTICA
+============================================================ */
+.memoria-hero-strip {
+  background: linear-gradient(135deg, #1A1A1A 0%, #2C2018 100%);
+  padding: 1.25rem 0; text-align: center;
+}
+.memoria-hero-strip p { font-size: .88rem; color: rgba(255,248,236,.65); letter-spacing: .04em; }
+.memoria-block {
+  background: var(--blanco); border-radius: 16px; overflow: hidden;
+  box-shadow: 0 8px 32px var(--sombra); margin-bottom: 2rem;
+}
+.memoria-block__header {
+  background: var(--estructura); color: var(--base);
+  padding: 2rem clamp(1.5rem,4vw,2.5rem);
+}
+.memoria-block__header h2 {
+  font-family: var(--ff-display); font-size: clamp(1.3rem,3vw,1.8rem);
+  color: var(--acento); margin-bottom: .4rem;
+}
+.memoria-block__header p { color: rgba(255,248,236,.75); font-size: .92rem; }
+.memoria-block__body { padding: clamp(1.5rem,4vw,2.5rem); }
+.memoria-tag {
+  display: inline-block; background: var(--acento); color: var(--estructura);
+  font-size: .72rem; font-weight: 700; padding: .2rem .6rem;
+  border-radius: 4px; text-transform: uppercase; letter-spacing: .06em; margin-bottom: .75rem;
+}
+.memoria-objetivos { display: flex; flex-direction: column; gap: .5rem; margin: 1rem 0; }
+.memoria-objetivo { display: flex; gap: .75rem; align-items: flex-start; font-size: .9rem; color: var(--cuerpo); }
+.memoria-objetivo::before { content: '▸'; color: var(--acento); flex-shrink: 0; margin-top: .05rem; }
+.dignificacion-item {
+  display: flex; gap: 1rem; align-items: flex-start;
+  padding: 1.25rem; border-radius: 10px; background: var(--base-mid); margin-bottom: .75rem;
+}
+.dignificacion-icon {
+  width: 48px; height: 48px; background: var(--estructura);
+  border-radius: 10px; display: flex; align-items: center;
+  justify-content: center; font-size: 1.3rem; flex-shrink: 0;
+}
+.dignificacion-item h4 { font-family: var(--ff-display); font-size: 1rem; color: var(--estructura); margin-bottom: .25rem; }
+.dignificacion-item p { font-size: .88rem; color: var(--gris); line-height: 1.5; }
+.trinchera-datos {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
+  gap: 1rem; margin: 1.5rem 0;
+}
+.trinchera-dato {
+  background: var(--estructura); color: var(--base);
+  border-radius: 10px; padding: 1rem; text-align: center;
+}
+.trinchera-dato__num { font-family: var(--ff-display); font-size: 2rem; color: var(--acento); line-height: 1; }
+.trinchera-dato__label { font-size: .72rem; color: rgba(255,248,236,.6); text-transform: uppercase; letter-spacing: .06em; margin-top: .25rem; }
