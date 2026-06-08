@@ -186,7 +186,7 @@ a   { color: inherit; text-decoration: none; }
 .nav__mobile.open { display: flex; }
 .nav__mobile a { padding: .75rem 1.5rem; font-weight: 700; font-size: .9rem; border-bottom: 1px solid rgba(200,169,110,.1); }
 .nav__mobile a:hover { background: rgba(200,169,110,.1); }
-@media (max-width: 900px) {
+@media (max-width: 1050px) {
   .nav__links, .nav__cta { display: none; }
   .nav__burger { display: flex; }
 }
@@ -199,6 +199,7 @@ a   { color: inherit; text-decoration: none; }
   display: flex; align-items: center;
   position: relative; overflow: hidden;
   padding-top: 70px;
+  padding-bottom: 160px;
 }
 .hero__bg {
   position: absolute; inset: 0;
@@ -268,7 +269,8 @@ a   { color: inherit; text-decoration: none; }
   .museo-card--reverse .museo-card__img { order: 0; }
 }
 .museo-card__img { min-height: 350px; position: relative; overflow: hidden; }
-.museo-card__img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.museo-card__img > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.carousel img { position: static; width: 100%; height: 100%; object-fit: cover; display: block; }
 .museo-card__img.placeholder {
   display: flex; align-items: center; justify-content: center;
   flex-direction: column; gap: 1rem; font-style: italic;
@@ -345,6 +347,7 @@ a   { color: inherit; text-decoration: none; }
   display: flex; align-items: center; gap: .5rem;
 }
 .grupo-item span { color: var(--acento); font-size: .7rem; }
+.grupo-item:hover { background: rgba(200,169,110,.25); color: var(--blanco); }
 
 /* ---- Programa días ---- */
 .programa-tabs { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin-bottom: 2rem; }
@@ -579,6 +582,19 @@ footer { background: #111; color: rgba(255,255,255,.75); padding: 4rem 0 2rem; }
 .foto-grid {
   display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1rem; margin-top: 2rem;
+}
+.foto-grid--magazine {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 1rem; margin-top: 2rem;
+}
+.foto-grid--magazine .foto-item:first-child {
+  grid-column: 1 / 2; grid-row: 1 / 3;
+}
+@media (max-width: 700px) {
+  .foto-grid--magazine { grid-template-columns: 1fr 1fr; }
+  .foto-grid--magazine .foto-item:first-child { grid-column: 1 / 3; grid-row: auto; }
 }
 .foto-item { position: relative; overflow: hidden; border-radius: 10px; aspect-ratio: 4/3; }
 .foto-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .35s; }
