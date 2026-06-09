@@ -128,6 +128,29 @@ a   { color: inherit; text-decoration: none; }
 .card__title { font-family: var(--ff-display); font-size: 1.2rem; margin-bottom: .5rem; color: var(--estructura); }
 .card__text  { font-size: .9rem; color: var(--gris); }
 
+/* ---- Tarjetas de contextualización ---- */
+.contexto-card {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(200,169,110,.2);
+  border-radius: var(--r);
+  padding: 2rem 1.5rem;
+  display: flex; flex-direction: column; gap: .75rem;
+  transition: border-color .25s, background .25s;
+}
+.contexto-card:hover { border-color: rgba(200,169,110,.5); background: rgba(255,255,255,.07); }
+.contexto-card__icon { font-size: 2rem; line-height: 1; }
+.contexto-card__title {
+  font-family: var(--ff-display); font-size: 1.25rem;
+  color: var(--acento); margin: 0;
+}
+.contexto-card__text { font-size: .9rem; color: rgba(255,248,236,.75); line-height: 1.7; flex: 1; }
+.contexto-card__link {
+  font-size: .82rem; font-weight: 700; color: var(--acento);
+  text-decoration: none; letter-spacing: .03em;
+  transition: opacity .2s;
+}
+.contexto-card__link:hover { opacity: .75; }
+
 /* ---- Grids ---- */
 .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
 .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
