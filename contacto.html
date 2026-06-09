@@ -87,7 +87,7 @@
 </section>
 
 <footer><div class="container"><div class="footer-grid">
-  <div class="footer-brand"><div class="footer-logo"><img src="resources/icons/Logo · Fundación Fayón Cultural y Patrimonial.svg" alt="Fundación Fayón Cultural y Patrimonial" class="footer-logo-img" /></div></div></div><p>Fayón · Bajo Aragón-Caspe · Aragón</p></div>
+  <div class="footer-brand"><div class="footer-logo"><img src="resources/icons/Logo · Fundación Fayón Cultural y Patrimonial.svg" alt="Fundación Fayón Cultural y Patrimonial" class="footer-logo-img" /></div><p>Fayón · Bajo Aragón-Caspe · Aragón</p></div>
   <div class="footer-col"><h4>Museos</h4><ul><li><a href="museos.html">Museo Batalla del Ebro</a></li><li><a href="museos.html#burges">Espacio Burges</a></li><li><a href="https://entradas.turismofayon.es" target="_blank">Comprar entradas</a></li></ul></div>
   <div class="footer-col"><h4>Actividades</h4><ul><li><a href="recreacion.html">Recreación Histórica</a></li><li><a href="visitas.html">Visitas Patrimonio</a></li><li><a href="concurso.html">Concurso de Pintura</a></li><li><a href="agenda.html">Agenda 2026</a></li></ul></div>
   <div class="footer-col"><h4>Fundación</h4><ul><li><a href="quienes-somos.html">Quiénes somos</a></li><li><a href="patrimonio.html">Patrimonio</a></li><li><a href="memoria.html">Memoria Democrática</a></li><li><a href="contacto.html">Contacto</a></li></ul></div>
@@ -96,7 +96,7 @@
 <script src="js/main.js"></script>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
-  var map = L.map('mapa').setView([41.2467, 0.3536], 14);
+  var map = L.map('mapa').setView([41.2464, 0.3551], 15);
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
   }).addTo(map);
@@ -104,12 +104,14 @@
     html: '<div style="background:var(--acento,#C8A96E);width:16px;height:16px;border-radius:50%;border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.4);"></div>',
     iconSize: [16, 16], iconAnchor: [8, 8], className: ''
   });
-  L.marker([41.2467, 0.3536], {icon: icon})
+  L.marker([41.2464, 0.3551], {icon: icon})
     .addTo(map)
     .bindPopup('<strong>Fundación Fayón Cultural y Patrimonial</strong><br/>Fayón · 50795 · Zaragoza')
     .openPopup();
 </script>
 </body></html>
+
+
 
 
 
