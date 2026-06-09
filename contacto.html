@@ -96,7 +96,7 @@
 <script src="js/main.js"></script>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
-  var map = L.map('mapa').setView([41.2464, 0.3551], 15);
+  var map = L.map('mapa').setView([41.24320709716501, 0.33437988072342606], 15);
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
   }).addTo(map);
@@ -104,12 +104,13 @@
     html: '<div style="background:var(--acento,#C8A96E);width:16px;height:16px;border-radius:50%;border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.4);"></div>',
     iconSize: [16, 16], iconAnchor: [8, 8], className: ''
   });
-  L.marker([41.2464, 0.3551], {icon: icon})
+  L.marker([41.24320709716501, 0.33437988072342606], {icon: icon})
     .addTo(map)
     .bindPopup('<strong>Fundación Fayón Cultural y Patrimonial</strong><br/>Fayón · 50795 · Zaragoza')
     .openPopup();
 </script>
 </body></html>
+
 
 
 
