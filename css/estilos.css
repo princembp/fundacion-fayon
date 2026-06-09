@@ -573,8 +573,7 @@ footer { background: #111; color: rgba(255,255,255,.75); padding: 4rem 0 2rem; }
   transition: transform .5s cubic-bezier(.4,0,.2,1);
 }
 .carousel__slide { min-width: 100%; height: 100%; }
-.carousel__slide img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s ease; }
-.carousel__slide img:hover { transform: scale(1.06); }
+.carousel__slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .carousel__btn {
   position: absolute; top: 50%; transform: translateY(-50%);
   width: 44px; height: 44px; background: rgba(26,26,26,.65);
