@@ -54,7 +54,7 @@ function scrollToTop() {
 
 /* ---- Carousel museo ---- */
 let carouselIndex = 0;
-const CAROUSEL_TOTAL = 12;
+const CAROUSEL_TOTAL = 10;
 
 function carouselMove(dir) {
   carouselIndex = (carouselIndex + dir + CAROUSEL_TOTAL) % CAROUSEL_TOTAL;
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.onclick = () => { carouselIndex = i; carouselUpdate(); };
       dotsEl.appendChild(btn);
     }
-    setInterval(() => carouselMove(1), 4000);
+    setInterval(() => carouselMove(1), 7000);
   }
 });
 

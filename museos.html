@@ -25,34 +25,12 @@
   <p>Dos espacios únicos que guardan memoria, arte e historia en Fayón</p>
 </div></div>
 
-<section class="section">
+<section class="section" style="padding-top:2rem; padding-bottom:2rem;">
   <div class="container">
 
     <!-- Museo Batalla del Ebro -->
-    <div class="museo-card fade-in">
-      <div class="museo-card__img" style="padding:0; overflow:hidden;">
-        <div class="carousel" id="carouselMuseo">
-          <div class="carousel__track" id="carouselTrack">
-            <div class="carousel__slide"><img src="fotos/museo/Museo/_MG_0005.jpg" alt="Museo Batalla del Ebro" loading="lazy" /></div>
-            <div class="carousel__slide"><img src="fotos/museo/Museo/_MG_0015.jpg" alt="Museo Batalla del Ebro" loading="lazy" /></div>
-            <div class="carousel__slide"><img src="fotos/museo/Museo/_MG_0017.jpg" alt="Museo Batalla del Ebro" loading="lazy" /></div>
-            <div class="carousel__slide"><img src="fotos/museo/Museo/_MG_0022.jpg" alt="Museo Batalla del Ebro" loading="lazy" /></div>
-            <div class="carousel__slide"><img src="fotos/museo/Museo/_MG_0045.jpg" alt="Museo Batalla del Ebro" loading="lazy" /></div>
-            <div class="carousel__slide"><img src="fotos/museo/Museo/_MG_0055.jpg" alt="Museo Batalla del Ebro" loading="lazy" /></div>
-            <div class="carousel__slide"><img src="fotos/museo/Museo/_MG_0066.jpg" alt="Museo Batalla del Ebro" loading="lazy" /></div>
-            <div class="carousel__slide"><img src="fotos/museo/Museo/_MG_0131.jpg" alt="Museo Batalla del Ebro" loading="lazy" /></div>
-            <div class="carousel__slide"><img src="fotos/museo/Museo/_MG_0142.jpg" alt="Museo Batalla del Ebro" loading="lazy" /></div>
-            <div class="carousel__slide"><img src="fotos/museo/Museo/_MG_0160.jpg" alt="Museo Batalla del Ebro" loading="lazy" /></div>
-            <div class="carousel__slide"><img src="fotos/museo/Museo/_MG_0208.jpg" alt="Museo Batalla del Ebro" loading="lazy" /></div>
-            <div class="carousel__slide"><img src="fotos/museo/Museo/_MG_0224.jpg" alt="Museo Batalla del Ebro" loading="lazy" /></div>
-          </div>
-          <button class="carousel__btn carousel__btn--prev" onclick="carouselMove(-1)" aria-label="Anterior">&#8592;</button>
-          <button class="carousel__btn carousel__btn--next" onclick="carouselMove(1)" aria-label="Siguiente">&#8594;</button>
-          <div class="carousel__count"><span id="carouselCurrent">1</span> / 12</div>
-          <div class="carousel__dots" id="carouselDots"></div>
-        </div>
-      </div>
-      <div class="museo-card__body">
+    <div class="fade-in" style="background:var(--blanco); border-radius:var(--r); box-shadow:0 4px 24px var(--sombra); overflow:hidden;">
+      <div style="padding:clamp(2rem,4vw,3rem);">
         <span class="badge">Museo</span>
         <h2 class="section-title" style="font-size:1.8rem;">Museo de la Batalla del Ebro</h2>
         <p style="margin-bottom:.75rem; font-size:.9rem;">
@@ -60,43 +38,67 @@
           Centenares de piezas originales — armamento, uniformes, documentos, fotografías y objetos personales —
           dan voz a los miles de hombres y mujeres que vivieron uno de los conflictos más devastadores del siglo XX.
         </p>
-        <div class="idiomas">
+        <div class="idiomas" style="margin-bottom:.75rem;">
           <span class="idioma-tag">🇪🇸 Castellano</span>
-          <span class="idioma-tag">🏴 Català</span>
-          <span class="idioma-tag">🇬🇧 English</span>
-          <span class="idioma-tag">🇫🇷 Français</span>
+          <span class="idioma-tag">🏴 Catalán</span>
+          <span class="idioma-tag">🇬🇧 Inglés</span>
+          <span class="idioma-tag">🇫🇷 Francés</span>
         </div>
         <p style="font-size:.82rem; color:var(--gris); margin-bottom:1rem;">🎧 Audioguía disponible en varios idiomas</p>
-        <div class="horarios-grid">
+        <div class="horarios-grid" style="margin-bottom:1rem;">
           <span class="horario-day">Lunes</span><span class="horario-hour">Cerrado</span>
           <span class="horario-day">Martes–Viernes</span><span class="horario-hour">Consultar disponibilidad</span>
           <span class="horario-day">Sábados</span><span class="horario-hour">10:00–14:00h · 17:00–19:00h</span>
           <span class="horario-day">Dom. y festivos</span><span class="horario-hour">10:00–14:00h</span>
         </div>
         <p style="font-size:.82rem; color:var(--gris); margin-bottom:1.25rem;">📍 Polígono Industrial Víntem, 50795 Fayón</p>
-        <div style="display:flex; gap:.75rem; flex-wrap:wrap;">
-          <a href="https://entradas.turismofayon.es" target="_blank" class="btn btn-primary btn-sm">🎟 Comprar entradas</a>
+        <a href="https://entradas.turismofayon.es" target="_blank" class="btn btn-primary btn-sm">🎟 Comprar entradas</a>
+      </div>
+      <div style="padding:0 clamp(1.5rem,4vw,3rem) clamp(1.5rem,4vw,3rem);">
+      <div class="carousel" id="carouselMuseo" style="max-width:700px; margin:0 auto;">
+        <div class="carousel__track" id="carouselTrack">
+          <div class="carousel__slide"><img src="fotos/museo/IMG_1792.JPG" alt="Museo Batalla del Ebro" loading="lazy" /></div>
+          <div class="carousel__slide"><img src="fotos/museo/IMG_1797.JPG" alt="Museo Batalla del Ebro" loading="lazy" /></div>
+          <div class="carousel__slide"><img src="fotos/museo/IMG_1798.JPG" alt="Museo Batalla del Ebro" loading="lazy" /></div>
+          <div class="carousel__slide"><img src="fotos/museo/IMG_1815.JPG" alt="Museo Batalla del Ebro" loading="lazy" /></div>
+          <div class="carousel__slide"><img src="fotos/museo/IMG_1820.JPG" alt="Museo Batalla del Ebro" loading="lazy" /></div>
+          <div class="carousel__slide"><img src="fotos/museo/IMG_1822.JPG" alt="Museo Batalla del Ebro" loading="lazy" /></div>
+          <div class="carousel__slide"><img src="fotos/museo/IMG_1828.JPG" alt="Museo Batalla del Ebro" loading="lazy" /></div>
+          <div class="carousel__slide"><img src="fotos/museo/IMG_1846.JPG" alt="Museo Batalla del Ebro" loading="lazy" /></div>
+          <div class="carousel__slide"><img src="fotos/museo/IMG_1855.JPG" alt="Museo Batalla del Ebro" loading="lazy" /></div>
+          <div class="carousel__slide"><img src="fotos/museo/IMG_1860.JPG" alt="Museo Batalla del Ebro" loading="lazy" /></div>
         </div>
+        <button class="carousel__btn carousel__btn--prev" onclick="carouselMove(-1)" aria-label="Anterior">&#8592;</button>
+        <button class="carousel__btn carousel__btn--next" onclick="carouselMove(1)" aria-label="Siguiente">&#8594;</button>
+        <div class="carousel__count"><span id="carouselCurrent">1</span> / 10</div>
+        <div class="carousel__dots" id="carouselDots"></div>
+      </div>
       </div>
     </div>
 
-    <!-- Espacio Burges -->
-    <div class="museo-card museo-card--reverse fade-in" id="burges">
-      <div class="museo-card__body" style="order:1;">
-        <span class="badge">Espacio Expositivo</span>
-        <h2 class="section-title" style="font-size:1.8rem;">Espacio María Pilar Burges</h2>
-        <p style="margin-bottom:.75rem; font-size:.9rem;">
+  </div>
+</section>
+
+<!-- Espacio Burges — texto -->
+<section class="section section--mid" id="burges" style="padding-bottom:2rem;">
+  <div class="container fade-in">
+    <span class="badge">Colección permanente</span>
+    <h2 class="section-title" style="font-size:1.8rem;">Espacio María Pilar Burges</h2>
+    <div class="divider"></div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center;">
+      <div>
+        <p style="font-size:.95rem; margin-bottom:.9rem; line-height:1.75;">
           El Espacio María Pilar Burges de Fayón expone <strong>ochenta obras</strong> de la primera
           Doctora en Bellas Artes de Aragón. Pintora, escritora, diseñadora teatral, maestra —
           artista polifacética que dejó en Fayón su huella más duradera.
         </p>
-        <p style="font-size:.9rem; margin-bottom:1.25rem;">
+        <p style="font-size:.9rem; margin-bottom:1.5rem; line-height:1.75;">
           En 1954 y 2004 la artista pintó los frescos de la Ermita de Nuestra Señora del Pilar.
           A partir de ese vínculo con Fayón nació la idea del espacio expositivo, cumpliendo
           su principal deseo testamentario: ver expuesto el conjunto de su obra en un mismo ámbito.
         </p>
-        <div style="background:var(--base); border-radius:var(--r); padding:1rem; margin-bottom:1.25rem;">
-          <p style="font-size:.82rem; font-weight:700; color:var(--acento); margin-bottom:.4rem;">ESTILO</p>
+        <div style="background:var(--base); border-radius:var(--r); padding:1rem; margin-bottom:1.5rem; border-left:3px solid var(--acento);">
+          <p style="font-size:.75rem; font-weight:700; color:var(--acento); letter-spacing:.08em; margin-bottom:.3rem;">ESTILO</p>
           <p style="font-size:.88rem;">Hiperrealismo situacional · Óleos · Retratos · Frescos murales</p>
         </div>
         <div style="display:flex; gap:.75rem; flex-wrap:wrap;">
@@ -104,13 +106,21 @@
           <a href="concurso.html" class="btn btn-dark btn-sm">Concurso Burges 2026</a>
         </div>
       </div>
-      <div class="museo-card__img" style="order:2;">
-        <img src="fotos/burges/Espacio Burges Fayón.jpg" alt="Espacio María Pilar Burges - Fayón" />
+      <div style="border-radius:var(--r); overflow:hidden; box-shadow:0 8px 32px rgba(0,0,0,.12);">
+        <img src="fotos/burges/fotos definitivas_espacio burges/portada.JPG" alt="Espacio María Pilar Burges" style="width:100%; display:block; object-fit:cover;" />
       </div>
     </div>
-
   </div>
 </section>
+
+<!-- Espacio Burges — slideshow -->
+<div class="burges-slideshow">
+  <img src="fotos/burges/fotos definitivas_espacio burges/primero.JPG" alt="Espacio Burges" class="burges-slide__img active" />
+  <img src="fotos/burges/fotos definitivas_espacio burges/segundo.JPG" alt="Espacio Burges" class="burges-slide__img" />
+  <img src="fotos/burges/fotos definitivas_espacio burges/tercero.JPG" alt="Espacio Burges" class="burges-slide__img" />
+  <div class="burges-slideshow__overlay"></div>
+  <div class="burges-slide__bar"><div class="burges-slide__progress" id="burgesProgress"></div></div>
+</div>
 
 <footer><div class="container"><div class="footer-grid">
   <div class="footer-brand"><div class="footer-logo"><img src="resources/icons/Logo · Fundación Fayón Cultural y Patrimonial.svg" alt="Fundación Fayón Cultural y Patrimonial" class="footer-logo-img" /></div><p>Fayón · Bajo Aragón-Caspe · Aragón</p></div>
@@ -120,6 +130,29 @@
 </div><div class="footer-bottom"><span>© 2026 Fundación Fayón Cultural y Patrimonial</span><span style="display:flex;gap:1.5rem;"><a href="#">Aviso legal</a><a href="#">Privacidad</a></span></div></div></footer>
 <button class="scroll-top" id="scrollTop" onclick="scrollToTop()" aria-label="Volver arriba">↑</button>
 <script src="js/main.js"></script>
+<script>
+(function() {
+  var imgs = document.querySelectorAll('.burges-slide__img');
+  var progress = document.getElementById('burgesProgress');
+  var idx = 0;
+  var duration = 7000;
+  if (!imgs.length) return;
+  function advance() {
+    imgs[idx].classList.remove('active');
+    idx = (idx + 1) % imgs.length;
+    imgs[idx].classList.add('active');
+    progress.style.transition = 'none';
+    progress.style.width = '0%';
+    setTimeout(function() {
+      progress.style.transition = 'width ' + duration + 'ms linear';
+      progress.style.width = '100%';
+    }, 20);
+  }
+  progress.style.transition = 'width ' + duration + 'ms linear';
+  progress.style.width = '100%';
+  setInterval(advance, duration);
+})();
+</script>
 </body></html>
 
 

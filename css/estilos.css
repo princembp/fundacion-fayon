@@ -133,12 +133,47 @@ a   { color: inherit; text-decoration: none; }
   background: rgba(255,255,255,.04);
   border: 1px solid rgba(200,169,110,.2);
   border-radius: var(--r);
-  padding: 2rem 1.5rem;
-  display: flex; flex-direction: column; gap: .75rem;
+  padding: 0;
+  display: flex; flex-direction: column; gap: 0;
+  overflow: hidden;
   transition: border-color .25s, background .25s;
 }
 .contexto-card:hover { border-color: rgba(200,169,110,.5); background: rgba(255,255,255,.07); }
-.contexto-card__icon { font-size: 2rem; line-height: 1; }
+.contexto-card__title { padding: 1.25rem 1.5rem 0; }
+.contexto-card__text  { padding: .6rem 1.5rem 0; flex: 1; }
+.contexto-card__link  { padding: .75rem 1.5rem 1.5rem; display: block; }
+/* mini-carrusel de contextualización */
+.ctx-carousel {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  border-radius: var(--r) var(--r) 0 0;
+  background: #111;
+  flex-shrink: 0;
+}
+.ctx-carousel img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
+.ctx-btn {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  background: rgba(0,0,0,.45); color: #fff;
+  border: none; cursor: pointer;
+  font-size: 1.6rem; line-height: 1;
+  padding: .2rem .55rem;
+  border-radius: 4px;
+  transition: background .2s;
+  z-index: 2;
+}
+.ctx-btn:hover { background: rgba(200,169,110,.75); }
+.ctx-btn--prev { left: .5rem; }
+.ctx-btn--next { right: .5rem; }
+.ctx-count {
+  position: absolute; bottom: .5rem; right: .65rem;
+  font-size: .72rem; color: rgba(255,255,255,.75);
+  background: rgba(0,0,0,.4); padding: .1rem .4rem;
+  border-radius: 4px; pointer-events: none;
+}
 .contexto-card__title {
   font-family: var(--ff-display); font-size: 1.25rem;
   color: var(--acento); margin: 0;
@@ -284,7 +319,7 @@ a   { color: inherit; text-decoration: none; }
 
 /* ---- Page hero (páginas interiores) ---- */
 .page-hero {
-  padding: 130px 0 60px;
+  padding: 120px 0 40px;
   background: linear-gradient(135deg, var(--estructura) 60%, #3D2C1A 100%);
   color: var(--blanco);
 }
@@ -298,8 +333,17 @@ a   { color: inherit; text-decoration: none; }
 @media (max-width: 768px) { .about__grid { grid-template-columns: 1fr; gap: 2rem; } }
 .about__img-wrap {
   position: relative; border-radius: 16px; overflow: hidden; aspect-ratio: 4/3;
-  background: linear-gradient(135deg, var(--base-mid), var(--acento));
+  background: transparent;
+  display: flex; align-items: center; justify-content: center;
 }
+.about__logo-svg {
+  width: 85%; max-width: 360px;
+}
+.fin-list li {
+  transition: color .3s ease;
+  cursor: default;
+}
+.fin-list li:hover { color: var(--acento); }
 .fin-list { list-style: none; display: flex; flex-direction: column; gap: .6rem; }
 .fin-list li { display: flex; align-items: flex-start; gap: .75rem; font-size: .95rem; }
 .fin-list li::before { content: '◆'; color: var(--acento); font-size: .6rem; margin-top: .35rem; flex-shrink: 0; }
@@ -318,6 +362,33 @@ a   { color: inherit; text-decoration: none; }
 }
 .museo-card__img { min-height: 350px; position: relative; overflow: hidden; }
 .museo-card__img > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+/* Espacio Burges — slideshow banda */
+.burges-slideshow {
+  position: relative; overflow: hidden; height: 480px;
+}
+.burges-slide__img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; object-fit: cover;
+  opacity: 0; transition: opacity 1s ease;
+}
+.burges-slide__img.active { opacity: 1; }
+.burges-slideshow__overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to right, rgba(10,8,6,.68) 40%, rgba(10,8,6,.15) 100%);
+  z-index: 1;
+}
+.burges-slide__bar {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  height: 3px; background: rgba(255,255,255,.2); z-index: 2;
+}
+.burges-slide__progress {
+  height: 100%; width: 0%;
+  background: var(--acento); transition: width linear;
+}
+@media (max-width: 768px) {
+  .burges-slideshow { height: 260px; }
+}
 .carousel img { position: static; width: 100%; height: 100%; object-fit: cover; display: block; }
 .museo-card__img.placeholder {
   display: flex; align-items: center; justify-content: center;
@@ -589,7 +660,8 @@ footer { background: #111; color: rgba(255,255,255,.75); padding: 4rem 0 2rem; }
 ============================================================ */
 .carousel {
   position: relative; overflow: hidden; border-radius: 12px;
-  aspect-ratio: 16/9; background: var(--estructura);
+  aspect-ratio: 3/2; background: var(--estructura);
+  max-height: 420px;
 }
 .carousel__track {
   display: flex; height: 100%;
