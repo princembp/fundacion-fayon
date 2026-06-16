@@ -424,6 +424,15 @@ a   { color: inherit; text-decoration: none; }
   transition: background .2s;
 }
 .patrimonio-item:hover { background: rgba(200,169,110,.1); }
+.patrimonio-item--foto {
+  flex-direction: column; padding: 0; overflow: hidden; gap: 0;
+}
+.patrimonio-foto {
+  width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block;
+}
+.patrimonio-item--foto .patrimonio-item__body {
+  padding: 1.25rem;
+}
 .patrimonio-icon {
   width: 52px; height: 52px; border-radius: 50%;
   background: var(--acento); display: flex; align-items: center;

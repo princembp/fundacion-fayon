@@ -43,7 +43,7 @@
 
       <div>
         <h3 style="font-family:var(--ff-display); color:var(--base); font-size:1.3rem; margin-bottom:1.5rem;">Envíanos un mensaje</h3>
-        <form onsubmit="handleForm(event)">
+        <form action="https://formspree.io/f/mgobqwqp" method="POST" id="contactoForm" onsubmit="formspreeSubmit(event)">
           <div class="form-row">
             <div class="form-group"><label for="nombre">Nombre *</label><input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required /></div>
             <div class="form-group"><label for="email">Email *</label><input type="email" id="email" name="email" placeholder="tu@email.com" required /></div>
@@ -61,6 +61,7 @@
           </div>
           <div class="form-group"><label for="mensaje">Mensaje *</label><textarea id="mensaje" name="mensaje" placeholder="¿En qué podemos ayudarte?" required></textarea></div>
           <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">Enviar mensaje →</button>
+          <p id="formMsg" style="display:none; font-size:.9rem; color:#6fcf97; margin-top:1rem; text-align:center; font-weight:600;">✓ Mensaje enviado. Nos pondremos en contacto contigo pronto.</p>
           <p style="font-size:.78rem; color:rgba(255,248,236,.4); margin-top:.75rem; text-align:center;">Tus datos serán tratados conforme al RGPD exclusivamente para atender tu consulta.</p>
         </form>
       </div>
@@ -95,6 +96,26 @@
 </div><div class="footer-bottom"><span>© 2026 Fundación Fayón Cultural y Patrimonial</span><span style="display:flex;gap:1.5rem;"><a href="#">Aviso legal</a><a href="#">Privacidad</a></span></div></div></footer>
 <button class="scroll-top" id="scrollTop" onclick="scrollToTop()" aria-label="Volver arriba">↑</button>
 <script src="js/main.js"></script>
+<script>
+async function formspreeSubmit(e) {
+  e.preventDefault();
+  const form = document.getElementById('contactoForm');
+  const btn = form.querySelector('button[type=submit]');
+  btn.disabled = true;
+  btn.textContent = 'Enviando…';
+  const data = new FormData(form);
+  const res = await fetch(form.action, { method: 'POST', body: data, headers: { Accept: 'application/json' } });
+  if (res.ok) {
+    form.reset();
+    btn.style.display = 'none';
+    document.getElementById('formMsg').style.display = 'block';
+  } else {
+    btn.disabled = false;
+    btn.textContent = 'Enviar mensaje →';
+    alert('Ha ocurrido un error. Por favor escríbenos a turismo@fayon.es');
+  }
+}
+</script>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
   var map = L.map('mapa').setView([41.24320709716501, 0.33437988072342606], 15);
